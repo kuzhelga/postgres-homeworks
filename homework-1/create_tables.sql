@@ -20,8 +20,11 @@ CREATE TABLE orders
 (
 	order_id smallint PRIMARY KEY,
 	customer_id char(5) REFERENCES customers(customer_id) NOT NULL,
-	contact_name varchar(100) NOT NULL,
 	employee_id smallint REFERENCES employees(employee_id) NOT NULL,
 	order_date date NOT NULL,
 	ship_city varchar(100) NOT NULL
 );
+
+SELECT * FROM employees
+# команда для рестарта счетчика с 1
+ALTER SEQUENCE employees_employee_id_seq RESTART WITH 1;
